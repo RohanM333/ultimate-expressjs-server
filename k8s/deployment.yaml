@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: express-deployment
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  selector:
+    matchLabels:
+      app: express
+  template:
+    metadata:
+      labels:
+        app: express
+    spec:
+      containers:
+      - name: express
+        image: your-dockerhub-username/ultimate-express-server:latest
+        ports:
+[_{{{CITATION{{{_1{](https://github.com/hariclerry/book-management-api/tree/5315a433738a6901857bd756888f88d7aa2eaf45/src%2Fmiddleware%2Fauth.js)[_{{{CITATION{{{_2{](https://github.com/skredmi/news-explorer-api/tree/5f9338e5ab1b0f021f4322a40b3cb31ee9b5f139/utils%2Flimiter.js)
